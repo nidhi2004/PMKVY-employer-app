@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_shadow_end_color"
+        android:padding="15dp"
+        android:text="Basic Details Of Candidate"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:weightSum="2">
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Certified Candidate Name"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/certified_candidate_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sundar sunil"
+                android:textSize="20sp"
+                />
+
+        </TableRow>
+       <TableRow
+           android:layout_marginTop="7dp">
+           <TextView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Age"
+               android:textStyle="bold"
+               android:textSize="20sp"
+               />
+
+           <TextView
+               android:id="@+id/certified_candidate_age"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="32"
+               android:textSize="20dp"/>
+         </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gender"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/certified_candidate_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Male"
+                android:textSize="20sp" />
+        </TableRow>
+       <TableRow
+           android:layout_marginTop="7dp">
+           <TextView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Contact No."
+               android:textStyle="bold"
+               android:textSize="20sp"/>
+           <TextView
+               android:id="@+id/certified_candidate_contactno"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="7655432987"
+               android:textSize="20sp"/>
+       </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Father's Name/Husband's name"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/father_husband_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="shyam sundar lal"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Email"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/certified_candidate_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="sundarsunilshrivastava2048@gmail.com"
+                android:textSize="20sp" />
+
+        </TableRow>
+       <TableRow
+           android:layout_marginTop="7dp">
+           <TextView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Category"
+               android:textSize="20sp"
+               android:textStyle="bold"/>
+           <TextView
+               android:id="@+id/certified_candidate_category"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="Not Available"
+               android:textSize="20sp"/>
+       </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Differently Abled?"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/certified_candidate_differently_abled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Not Available"
+                android:textSize="20sp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Prior Educational Qualification"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/certified_candidate_p_e_q"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Not Available"
+                android:textSize="20sp"/>
+        </TableRow>
+    </TableLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_shadow_end_color"
+        android:padding="15dp"
+        android:text="Permanent Address Of Candidate"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:stretchColumns="*"
+        android:layout_margin="5dp"
+        android:weightSum="2">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="State"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/certified_candidate_state_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="chattisgarh"
+                android:layout_weight="1"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="District"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/certified_candidate_district_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Balod"
+                android:layout_weight="1"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pincode"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/certified_candidate_pincode_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="491228"
+                android:layout_weight="1"
+                android:textSize="20dp"/>
+        </TableRow>
+    </TableLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:text="certified for the Course(s)"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:background="@color/cardview_shadow_end_color"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:stretchColumns="*"
+        android:padding="10dp"
+        android:layout_weight="2">
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Course Name"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/certified_candidate_course_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Digital Photography and videography"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Training Center Name"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/certified_candidate_training_center_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="JSS Rural Developement And Self Employment"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sector"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/certified_candidate_sector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="IT-ITeS"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="State"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/certified_candidate_state"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Karnataka"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="7dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="District"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/certified_candidate_district"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chamarajanagar"
+                android:textSize="20dp"/>
+
+        </TableRow>
+    </TableLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+
+</ScrollView>
