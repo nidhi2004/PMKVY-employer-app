@@ -35,7 +35,7 @@ import java.util.List;
 public class employer_candidate_list extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     List<student_details> s_d;
     RecyclerView candidate_list_rv;
-    Spinner sp_state_list,sp_district_list,sp_sector_list,sp_jobrole_list;
+    Spinner sp_state_list, sp_district_list, sp_sector_list, sp_jobrole_list;
 
 
     @Override
@@ -56,7 +56,7 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
 
             @Override
             public void onClick(View view, int position) {
-                Intent detailed_info = new Intent(view.getContext(),datailed_candidate_info.class);
+                Intent detailed_info = new Intent(view.getContext(), datailed_candidate_info.class);
 
                 startActivity(detailed_info);
 
@@ -78,7 +78,7 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         categories_state.add("uttar pradesh");
         categories_state.add("madhya pradesh");*/
 
-        ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories_state);
+        ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories_state);
         adapter_state.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_state_list.setAdapter(adapter_state);
 
@@ -92,21 +92,21 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         categories_district.add("kota");
         categories_district.add("dhamtari"); */
 
-        ArrayAdapter<String> adapter_district = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories_district);
+        ArrayAdapter<String> adapter_district = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories_district);
         adapter_district.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_district_list.setAdapter(adapter_district);
 
         //spinner(SECTOR)
         sp_sector_list = (Spinner) findViewById(R.id.spinner_sector_list);
         sp_sector_list.setOnItemSelectedListener(this);
-        List<String> categories_sector  = new  ArrayList<>();
+        List<String> categories_sector = new ArrayList<>();
 
         /*categories_sector.add("sector1");
         categories_sector.add("sector2");
         categories_sector.add("sector3");
         categories_sector.add("sector4");*/
 
-        ArrayAdapter<String> adapter_sector = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories_sector);
+        ArrayAdapter<String> adapter_sector = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories_sector);
         adapter_district.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_sector_list.setAdapter(adapter_sector);
 
@@ -120,30 +120,31 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         categories_jobrole.add("jobrole3");
         categories_jobrole.add("jobrole4");*/
 
-        ArrayAdapter<String> adapter_jobrole = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories_jobrole);
+        ArrayAdapter<String> adapter_jobrole = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories_jobrole);
         adapter_jobrole.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_jobrole_list.setAdapter(adapter_jobrole);
         initializedata();
         initailizeadapter();
     }
 
-    private void initializedata(){
+    private void initializedata() {
 
         s_d = new ArrayList<>();
-        get_candidate_request
+        //get_candidate_request
         // todo:from database to recycler view
         /*s_d.add(new student_details("nidhi","20","cg","balod","none"));
         s_d.add(new student_details("gauri","27","cg","durg","doctor"));
         s_d.add(new student_details("rajni","22","mp","jabalpur","none"));
         s_d.add(new student_details("rakesh","23","mp","sambalpur","none"));*/
     }
-     private void initailizeadapter(){
 
-         student_data_adapter s_a_d = new student_data_adapter(s_d);
-         candidate_list_rv.setAdapter(s_a_d);
-         s_a_d.notifyDataSetChanged();
+    private void initailizeadapter() {
 
-     }
+        student_data_adapter s_a_d = new student_data_adapter(s_d);
+        candidate_list_rv.setAdapter(s_a_d);
+        s_a_d.notifyDataSetChanged();
+
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -161,6 +162,7 @@ class get_candidate_request extends AsyncTask<String, Void, String> {
     RecyclerView candidate_rv;
     JSONObject add;
     Context context;
+    boolean flag;
 
     public get_candidate_request(RecyclerView candidate_rv, List<student_details> s_d, Context context, JSONObject add) {
 
@@ -168,13 +170,13 @@ class get_candidate_request extends AsyncTask<String, Void, String> {
         this.candidate_rv = candidate_rv;
         this.s_d = s_d;
         this.add = add;
-        Boolean flag;
+
     }
+
     @Override
     protected String doInBackground(String... params) {
         try {
             String link = "192.168.43.5:8000/api/employer/employerlogincheck";
-
 
 
             URL url = new URL(link);
@@ -186,8 +188,8 @@ class get_candidate_request extends AsyncTask<String, Void, String> {
             add = new JSONObject();
 
 
-            add.put("s_d", );
-            add.put("eu_password", employer_pass);
+            //add.put("s_d", );
+            //add.put("eu_password", employer_pass);
             add.put("data", add);
 
 
@@ -218,5 +220,5 @@ class get_candidate_request extends AsyncTask<String, Void, String> {
         }
 
     }
-    }
 }
+

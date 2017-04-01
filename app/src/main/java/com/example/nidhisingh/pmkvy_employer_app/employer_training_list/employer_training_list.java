@@ -85,6 +85,9 @@ public class employer_training_list extends AppCompatActivity implements Adapter
         ArrayAdapter<String> adapter_sector_training = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories_sector_training);
         adapter_sector_training.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_sector_list1.setAdapter(adapter_sector_training);
+        get_training_request training_req = new get_training_request(this);
+        training_req.execute();
+
 
         //spinner(JOBROLE)
         sp_jobrole_list1 = (Spinner) findViewById(R.id.spinner_jobrole_list1);
@@ -140,7 +143,7 @@ class get_training_request extends AsyncTask<String, Void, String> {
     Context context;
     boolean flag;
 
-    public get_training_request(JSONObject add, Context context, List<training_details> t_d, RecyclerView training_recycler_view) {
+    public get_training_request(Context context) {
         this.t_d = t_d;
         this.context = context;
         this.training_recycler_view = training_recycler_view;
@@ -149,7 +152,7 @@ class get_training_request extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-
+        Toast.makeText(context.getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
 
     @Override

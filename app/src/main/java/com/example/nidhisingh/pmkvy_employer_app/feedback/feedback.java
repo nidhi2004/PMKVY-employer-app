@@ -68,7 +68,7 @@ public class feedback extends AppCompatActivity implements View.OnClickListener,
                 add.put("subject", feedback_subject.getText().toString());
                 add.put("details", feedback_details.getText().toString());
                 add.put("rating", 3);
-                new get_feedback_request(feedback_subject, feedback_details, Rating_bar_rating, add, v.getContext()).execute();
+//                new get_feedback_request(feedback_subject, feedback_details, Rating_bar_rating, add, v.getContext()).execute();
 
             }catch (Exception e) {
                 Log.d("ERROR" , e.getMessage());
