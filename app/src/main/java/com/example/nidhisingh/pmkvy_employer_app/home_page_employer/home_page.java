@@ -35,16 +35,16 @@ public class home_page extends AppCompatActivity implements AdapterView.OnClickL
 
     @Override
     public void onClick(View v) {
-        Intent recycler_certified_candidate_list = new Intent(this,employer_candidate_list.class);
-        Intent recycler_find_training_center = new Intent(this,employer_training_list.class);
+        Intent certified_candidate_list = new Intent(this,employer_candidate_list.class);
+        Intent find_training_center = new Intent(this,employer_training_list.class);
 
         if(v.getId()== R.id.find_tc_employer_home)
         {
-            startActivity(recycler_find_training_center);
+            startActivity(find_training_center);
         }
         else
         {
-            startActivity(recycler_certified_candidate_list);
+            startActivity(certified_candidate_list);
         }
 
     }

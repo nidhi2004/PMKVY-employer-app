@@ -19,7 +19,7 @@
         <activity android:name=".employer_candidate_list.employer_candidate_list" android:theme="@style/AppTheme"/>
         <activity android:name=".employer_training_list.employer_training_list" android:theme="@style/AppTheme"/>
         <activity android:name=".home_page_employer.home_page" android:theme="@style/AppTheme"/>
-
+        <activity android:name=".detailed_candidate_information.datailed_candidate_info" android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

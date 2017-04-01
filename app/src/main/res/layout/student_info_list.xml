@@ -1,144 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView android:id="@+id/candidate_cv"
-    android:layout_marginStart="5dp"
-    android:layout_width="375dp"
+<android.support.v7.widget.CardView
+    android:id="@+id/candidate_cv"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="2dp"
-    app:cardUseCompatPadding="true"
-    app:cardCornerRadius="6dp"
-    app:cardBackgroundColor="#FFEFA5"
-
     xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cardUseCompatPadding="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TableLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableRow
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/student_name_list"
+            style="@style/student_list_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginTop="5dp"
-            android:weightSum="2">
+            android:text="Vaibhav Pandey" />
 
-            <TextView
-                android:id="@+id/student_name_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Ally"
-                android:textColor="#000000"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e3c12d2d" />
 
-        </TableRow>
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginTop="2dp"
-            android:weightSum="4" >
+            android:layout_marginTop="6dp"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/age"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:layout_weight="1"
-                android:text="Age "
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
 
-            <TextView
-                android:id="@+id/student_age_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:layout_weight="3"
-                android:text="32"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/age"
+                    style="@style/student_list_card_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Age:" />
 
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginTop="2dp"
-            android:weightSum="4" >
+                <TextView
+                    android:id="@+id/student_age_list"
+                    style="@style/student_list_card_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="21" />
 
-            <TextView
-                android:id="@+id/textview4"
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:layout_weight="1"
-                android:text="State "
-                android:textSize="22sp"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/student_state_list"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <TextView
+                    android:id="@+id/textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="State"
+                    style="@style/student_list_card_field"
+                    />
+                <TextView
+                    android:id="@+id/student_state_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Chhattisgarh"
+                    style="@style/student_list_card_field"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:layout_weight="3"
-                android:text="jjjjjjjjjjjjjjk"
-                android:textSize="20sp"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginTop="2dp"
-            android:weightSum="4" >
-            <TextView
-                android:id="@+id/textview6"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <TextView
+                    android:id="@+id/textview6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="District"
+                    style="@style/student_list_card_field"
+                    />
+                <TextView
+                    android:id="@+id/student_district_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Durg"
+                    style="@style/student_list_card_field"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:text="District "
-                android:layout_weight="1"
-                android:textSize="22sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/student_district_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:layout_weight="3"
-                android:text="jjjjjjjjjjjjjjkkk"
-                android:textSize="20sp"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginTop="2dp"
-            android:weightSum="4" >
-            <TextView
-                android:id="@+id/textview8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:text="JobRole "
-                android:layout_weight="1"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/student_jobrole_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:layout_weight="3"
-                android:text="jjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkk"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-    </TableLayout>
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <TextView
+                    android:id="@+id/textview8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Job Role"
+                    style="@style/student_list_card_field"
+                    />
+                <TextView
+                    android:id="@+id/student_jobrole_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Carpenter"
+                    style="@style/student_list_card_field"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
 
