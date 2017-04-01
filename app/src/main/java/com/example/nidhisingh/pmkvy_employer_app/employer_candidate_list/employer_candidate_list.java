@@ -73,10 +73,10 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         sp_state_list.setOnItemSelectedListener(this);
         List<String> categories_state = new ArrayList<String>();
 
-        categories_state.add("chattisgarh");
+       /* categories_state.add("chattisgarh");
         categories_state.add("rajasthan");
         categories_state.add("uttar pradesh");
-        categories_state.add("madhya pradesh");
+        categories_state.add("madhya pradesh");*/
 
         ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories_state);
         adapter_state.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -87,10 +87,10 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         sp_district_list.setOnItemSelectedListener(this);
         List<String> categories_district = new ArrayList<String>();
 
-        categories_district.add("balod");
+        /*categories_district.add("balod");
         categories_district.add("durg");
         categories_district.add("kota");
-        categories_district.add("dhamtari");
+        categories_district.add("dhamtari"); */
 
         ArrayAdapter<String> adapter_district = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories_district);
         adapter_district.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -101,10 +101,10 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         sp_sector_list.setOnItemSelectedListener(this);
         List<String> categories_sector  = new  ArrayList<>();
 
-        categories_sector.add("sector1");
+        /*categories_sector.add("sector1");
         categories_sector.add("sector2");
         categories_sector.add("sector3");
-        categories_sector.add("sector4");
+        categories_sector.add("sector4");*/
 
         ArrayAdapter<String> adapter_sector = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories_sector);
         adapter_district.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -115,10 +115,10 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
         sp_jobrole_list.setOnItemSelectedListener(this);
         List<String> categories_jobrole = new ArrayList<>();
 
-        categories_jobrole.add("jobrole1");
+       /* categories_jobrole.add("jobrole1");
         categories_jobrole.add("jobrole2");
         categories_jobrole.add("jobrole3");
-        categories_jobrole.add("jobrole4");
+        categories_jobrole.add("jobrole4");*/
 
         ArrayAdapter<String> adapter_jobrole = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories_jobrole);
         adapter_jobrole.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -130,40 +130,23 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
     private void initializedata(){
 
         s_d = new ArrayList<>();
+        get_candidate_request
         // todo:from database to recycler view
-        s_d.add(new student_details("nidhi","20","cg","balod","none"));
+        /*s_d.add(new student_details("nidhi","20","cg","balod","none"));
         s_d.add(new student_details("gauri","27","cg","durg","doctor"));
         s_d.add(new student_details("rajni","22","mp","jabalpur","none"));
-        s_d.add(new student_details("rakesh","23","mp","sambalpur","none"));
+        s_d.add(new student_details("rakesh","23","mp","sambalpur","none"));*/
     }
      private void initailizeadapter(){
 
          student_data_adapter s_a_d = new student_data_adapter(s_d);
          candidate_list_rv.setAdapter(s_a_d);
-        s_a_d.notifyDataSetChanged();
+         s_a_d.notifyDataSetChanged();
 
      }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        // for State
-        String item_state = parent.getItemAtPosition(position).toString();
-
-
-
-        //for district
-        String item_district = parent.getItemAtPosition(position).toString();
-
-
-
-        //for sector
-        String item_sector = parent.getItemAtPosition(position).toString();
-
-
-
-        //for jobrole
-        String item_jobrole = parent.getItemAtPosition(position).toString();
-
     }
 
     @Override
@@ -172,3 +155,68 @@ public class employer_candidate_list extends AppCompatActivity implements Adapte
     }
 }
 
+class get_candidate_request extends AsyncTask<String, Void, String> {
+    Spinner sp_state_list, sp_district_list, sp_sector_list, sp_jobrole_list;
+    List<student_details> s_d;
+    RecyclerView candidate_rv;
+    JSONObject add;
+    Context context;
+
+    public get_candidate_request(RecyclerView candidate_rv, List<student_details> s_d, Context context, JSONObject add) {
+
+        this.context = context;
+        this.candidate_rv = candidate_rv;
+        this.s_d = s_d;
+        this.add = add;
+        Boolean flag;
+    }
+    @Override
+    protected String doInBackground(String... params) {
+        try {
+            String link = "192.168.43.5:8000/api/employer/employerlogincheck";
+
+
+
+            URL url = new URL(link);
+            URLConnection con = url.openConnection();
+
+            con.setDoOutput(true);
+            OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+
+            add = new JSONObject();
+
+
+            add.put("s_d", );
+            add.put("eu_password", employer_pass);
+            add.put("data", add);
+
+
+            wr.write(add.toString());
+            wr.flush();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+
+            while ((line = reader.readLine()) != null) {
+                Log.d("LINE : ", line);
+                if (line.equals("true")) {
+                    //TODO: 3/20/2017 add response checking from server format is in jason
+                    flag = true;
+                } else
+                    flag = false;
+
+                sb.append(line);
+            }
+            return sb.toString();
+
+
+        } catch (Exception e) {
+            Log.d("ERROR", e.getMessage());
+            return "Exception: " + e.getMessage();
+        }
+
+    }
+    }
+}
